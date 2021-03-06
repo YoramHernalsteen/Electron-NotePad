@@ -1,0 +1,21 @@
+@media (prefers-color-scheme: dark) {
+    body { background:  #031b42; color: #f305ff; }
+    .toggle{
+        background-color: #f305ff;
+        opacity: 70%;
+        color: white;
+        border-radius: 10px;
+        padding: 1em;
+    }
+}
+
+@media (prefers-color-scheme: light) {
+    body { background:  #f4f5e4; color: #031b42; }
+    .toggle{
+        background-color: #031b42;
+        opacity: 70%;
+        color: white;
+        border-radius: 10px;
+        padding: 1em;
+    }
+}
