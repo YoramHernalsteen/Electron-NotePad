@@ -1,0 +1,15 @@
+{
+  "name": "my-electron-app",
+  "version": "1.0.0",
+  "description": "Electron app that has a dark theme",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Yoram Hernalsteen",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^12.0.0"
+  }
+}
