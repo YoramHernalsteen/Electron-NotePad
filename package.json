@@ -11,5 +11,8 @@
   "author": "Yoram Hernalsteen",
   "devDependencies": {
     "electron": "^12.0.0"
+  },
+  "dependencies": {
+    "@electron/remote": "^1.0.4"
   }
 }

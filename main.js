@@ -1,4 +1,5 @@
 const { app, BrowserWindow,ipcMain, nativeTheme, Menu } = require('electron');
+require('@electron/remote/main').initialize();
 
 
 function createWindow () {
@@ -19,7 +20,7 @@ function createWindow () {
                     label: 'new',
                     accelerator: 'CmdOrCtrl+N',
                     click: function() {
-                        win.webContents.send('action', 'new')
+                        win.webContents.send('action', 'new');
                     }
                 },
                 {
@@ -34,16 +35,22 @@ function createWindow () {
                     label: 'save',
                     accelerator: 'CmdOrCtrl+S',
                     click: function() {
-                        win.webContents.send('action', 'save')
+                        win.webContents.send('action', 'save');
                     }
                 },
                 {
                     label: 'save as...  ',
                     accelerator: 'CmdOrCtrl+Shift+S',
                     click: function() {
-                        win.webContents.send('action', 'save-as')
+                        win.webContents.send('action', 'save-as');
                     }
                 },
+                {
+                    label: 'close',
+                    click:function () {
+                        win.webContents.send('action', 'close');
+                    }
+                }
             ]
         }
     ];
