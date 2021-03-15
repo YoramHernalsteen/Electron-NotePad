@@ -1,21 +1,41 @@
 @media (prefers-color-scheme: dark) {
-    body { background:  #031b42; color: #f305ff; }
+    body { background:  #202040; color: ghostwhite; }
     .toggle{
         background-color: #f305ff;
         opacity: 70%;
-        color: white;
+        color: ghostwhite;
         border-radius: 10px;
         padding: 1em;
+    }
+    .editor{
+        border: solid #f305ff;
+        color: ghostwhite;
+        background-color: #202040;
+        opacity:70%;
     }
 }
 
 @media (prefers-color-scheme: light) {
-    body { background:  #f4f5e4; color: #031b42; }
+    body { background:  #f4f5e4; color: #202040; }
     .toggle{
-        background-color: #031b42;
+        background-color: #202040;
         opacity: 70%;
         color: white;
         border-radius: 10px;
         padding: 1em;
     }
+    .editor{
+        border: solid #202040;
+        color: #202040;
+        background-color: white;
+        opacity:70%;
+    }
+}
+
+.editor{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 100%;
+    border-radius: 15px;
 }
