@@ -7,7 +7,8 @@ function createWindow () {
         height: 600,
         webPreferences: {
             nodeIntegration: true,
-            contextIsolation: false
+            contextIsolation: false,
+            enableRemoteModule: true,
         }
     });
     const menuTemplate = [
@@ -48,6 +49,7 @@ function createWindow () {
     ];
     let menu = Menu.buildFromTemplate (menuTemplate);
     Menu.setApplicationMenu (menu);
+    win.webContents.openDevTools();
     win.loadFile('index.html');
     ipcMain.handle('dark-mode:toggle', () => {
         if (nativeTheme.shouldUseDarkColors) {
