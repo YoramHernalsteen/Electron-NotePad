@@ -28,7 +28,6 @@ function createWindow () {
                     accelerator: 'CmdOrCtrl+O',
                     click: function() {
                         win.webContents.send('action', 'open');
-                        console.log("open");
                     }
                 },
                 {
