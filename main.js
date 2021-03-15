@@ -55,7 +55,7 @@ function createWindow () {
     ];
     let menu = Menu.buildFromTemplate (menuTemplate);
     Menu.setApplicationMenu (menu);
-    win.webContents.openDevTools();
+    //win.webContents.openDevTools();
     win.loadFile('index.html');
     ipcMain.handle('dark-mode:toggle', () => {
         if (nativeTheme.shouldUseDarkColors) {
