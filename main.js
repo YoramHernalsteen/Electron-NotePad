@@ -1,46 +1,8 @@
 const { app, BrowserWindow,ipcMain, nativeTheme, Menu } = require('electron');
-const path = require('path');
-let win;
-const menuTemplate = [
-    {
-        label: ' file ',
-        submenu: [
-            {
-                label: 'new',
-                accelerator: 'CmdOrCtrl+N',
-                click: function() {
-                    win.webContents.send('action', 'new')
-                }
-            },
-            {
-                label: 'open',
-                accelerator: 'CmdOrCtrl+O',
-                click: function() {
-                    win.webContents.send('action', 'open')
-                }
-            },
-            {
-                label: 'save',
-                accelerator: 'CmdOrCtrl+S',
-                click: function() {
-                    win.webContents.send('action', 'save')
-                }
-            },
-            {
-                label: 'save as...  ',
-                accelerator: 'CmdOrCtrl+Shift+S',
-                click: function() {
-                    win.webContents.send('action', 'save-as')
-                }
-            },
-        ]
-    }
-];
-let menu = Menu.buildFromTemplate (menuTemplate);
-Menu.setApplicationMenu (menu);
+
 
 function createWindow () {
-    win = new BrowserWindow({
+    const win = new BrowserWindow({
         width: 800,
         height: 600,
         webPreferences: {
@@ -48,6 +10,44 @@ function createWindow () {
             contextIsolation: false
         }
     });
+    const menuTemplate = [
+        {
+            label: ' file ',
+            submenu: [
+                {
+                    label: 'new',
+                    accelerator: 'CmdOrCtrl+N',
+                    click: function() {
+                        win.webContents.send('action', 'new')
+                    }
+                },
+                {
+                    label: 'open',
+                    accelerator: 'CmdOrCtrl+O',
+                    click: function() {
+                        win.webContents.send('action', 'open');
+                        console.log("open");
+                    }
+                },
+                {
+                    label: 'save',
+                    accelerator: 'CmdOrCtrl+S',
+                    click: function() {
+                        win.webContents.send('action', 'save')
+                    }
+                },
+                {
+                    label: 'save as...  ',
+                    accelerator: 'CmdOrCtrl+Shift+S',
+                    click: function() {
+                        win.webContents.send('action', 'save-as')
+                    }
+                },
+            ]
+        }
+    ];
+    let menu = Menu.buildFromTemplate (menuTemplate);
+    Menu.setApplicationMenu (menu);
     win.loadFile('index.html');
     ipcMain.handle('dark-mode:toggle', () => {
         if (nativeTheme.shouldUseDarkColors) {
